@@ -14,4 +14,4 @@ const parser = new Parser()
     length: "noCh"
   });
 
-export const dataParse = data => (parsedData = parser.parse(data));
+export const dataParse = data => parser.parse(data);
