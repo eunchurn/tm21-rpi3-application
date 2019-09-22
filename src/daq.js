@@ -43,5 +43,5 @@ const getDataAndEmit = async socket => {
 };
 
 server.bind(58432, () => {
-  socket.setMulticastInterface('234.5.6.7');
+  server.setMulticastInterface('234.5.6.7');
 });
