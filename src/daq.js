@@ -13,14 +13,15 @@ server.on("error", err => {
 });
 
 server.on("message", data => {
-  console.log(data)
+  // console.log(data)
   const parsedData = dataParse(data);
   parsedData.channel = parsedData.channel.map((obj, index) => {
     obj[index] = obj.data;
     delete obj.data;
     return obj;
   });
-  redisClient.zaddData("DAQ", parsedData);
+  console.log(parsedData)
+  // redisClient.zaddData("DAQ", parsedData);
 });
 
 setInterval(function() {
