@@ -9,7 +9,7 @@ const parser = new Parser()
   .array("channel", {
     type: new Parser().array("data", {
       type: "doublebe",
-      length: 20
+      length: 100
     }),
     length: "noCh"
   });
