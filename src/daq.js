@@ -13,13 +13,15 @@ server.on("error", err => {
 });
 
 server.on("message", data => {
+  const timestamp = new Date;
   const parsedData = dataParse(data);
+  parsedData.timestamp = timestamp.valueOf();
   parsedData.channel = parsedData.channel.map((obj, index) => {
     obj[index] = obj.data;
     delete obj.data;
     return obj;
   });
-  console.log(parsedData.channel)
+  console.log(parsedData)
 });
 
 server.bind(58432, () => {
