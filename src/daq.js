@@ -13,6 +13,7 @@ server.on("error", err => {
 });
 
 server.on("message", data => {
+  console.log(data)
   const parsedData = dataParse(data);
   parsedData.channel = parsedData.channel.map((obj, index) => {
     obj[index] = obj.data;
@@ -41,4 +42,6 @@ const getDataAndEmit = async socket => {
   }
 };
 
-server.bind(58432);
+server.bind(58432, () => {
+  socket.setMulticastInterface('234.5.6.7');
+});
