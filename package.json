@@ -28,6 +28,7 @@
   "homepage": "https://github.com/eunchurn/tm21-rpi3-application#readme",
   "dependencies": {
     "binary-parser": "^1.4.0",
+    "cbor-sync": "^1.0.4",
     "dotenv": "^8.1.0",
     "mqtt": "^3.0.0",
     "redis": "^2.8.0"
