@@ -1,0 +1,61 @@
+{
+  "name": "tm21-rpi3-application",
+  "version": "1.0.0",
+  "description": "Raspberry Pi Application for TM21 Vibration Controller Monitoring",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eunchurn/tm21-rpi3-application.git"
+  },
+  "keywords": [
+    "Raspberry",
+    "Pi",
+    "MQTT",
+    "Monitoring",
+    "Node"
+  ],
+  "author": "Eunchurn Park (eunchurn.park@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eunchurn/tm21-rpi3-application/issues"
+  },
+  "homepage": "https://github.com/eunchurn/tm21-rpi3-application#readme",
+  "dependencies": {
+    "binary-parser": "^1.4.0",
+    "dotenv": "^8.1.0",
+    "mqtt": "^3.0.0",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "nodemon": "^1.19.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./"
+          ],
+          "alias": {
+            "@src": "./src",
+            "@libs": "./libs"
+          }
+        }
+      ]
+    ]
+  }
+}
