@@ -1,1 +1,1 @@
-import "@src/daq"
+import "@src/app"
