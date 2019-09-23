@@ -76,9 +76,7 @@ const daqParser = new Parser()
   });
 
 const anemoParser = new Parser()
-  .string("utc", {
-    length: 2
-  })
+  .uint16("utc")
   .string("comma1", {
     length: 1
   })
