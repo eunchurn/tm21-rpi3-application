@@ -18,10 +18,9 @@ const client = net.createConnection(
 
 let anemoData = [];
 client.on("data", data => {
-  console.log(data)
   if (data[data.length-1] === 10) {
+    anemoData.push(data);
     const joinedData = Buffer.concat(anemoData);
-    console.log(joinedData)
     console.log(anemoParse(joinedData))
     anemoData = [];
   } else {
