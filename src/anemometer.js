@@ -24,6 +24,7 @@ client.on("data", data => {
     const { utc, direction, speed, status } = anemoParse(joinedData);
     const output = {
       utc,
+      timestamp: new Date().valueOf(),
       direction: Number(direction),
       speed: Number(speed),
       status: Number(status)
