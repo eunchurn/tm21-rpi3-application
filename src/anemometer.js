@@ -8,7 +8,7 @@ const anemometer = new anemoEvent();
 const netcat = spawn('netcat', [process.env.ANEMOMETER_HOST, process.env.ANEMOMETER_PORT]);
 
 netcat.stdout.on('data', (data) => {
-  console.log(data.toString())
+  console.log(data.toString().replace(/\n/g, ""))
 })
 
 // const client = net.createConnection(
