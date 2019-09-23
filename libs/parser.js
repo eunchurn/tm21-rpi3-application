@@ -75,5 +75,44 @@ const daqParser = new Parser()
     length: "noCh"
   });
 
+const anemoParser = new Parser()
+  .string("utc", {
+    length: 2
+  })
+  .string("comma1", {
+    length: 1
+  })
+  .string("direction", {
+    length: 3
+  })
+  .string("comma2", {
+    length: 1
+  })
+  .string("speed", {
+    length: 6
+  })
+  .string("comma3", {
+    length: 1
+  })
+  .string("M", {
+    length: 1
+  })
+  .string("comma4", {
+    length: 1
+  })
+  .string("status", {
+    length: 2
+  })
+  .string("comma5", {
+    length: 1
+  })
+  .string("unknwon", {
+    length: 4
+  })
+  .string("etx", {
+    length: 1
+  });
+
 export const daqParse = data => daqParser.parse(data);
 export const plcParse = data => plcParser.parse(data);
+export const anemoParse = data => anemoParser.parse(data);

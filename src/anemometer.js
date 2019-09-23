@@ -1,6 +1,7 @@
 import net from "net";
 import "dotenv/config";
 import EventEmitter from "events";
+import { anemoParse } from '../libs/parser';
 
 class anemoEvent extends EventEmitter {}
 const anemometer = new anemoEvent();
@@ -16,8 +17,9 @@ const client = net.createConnection(
 );
 
 client.on("data", data => {
-  console.log("received: ", data.length, data);
-  console.log(data.toString("utf8"));
+  console.log(anemoParse(data))
+  // console.log("received: ", data.length, data);
+  // console.log(data.toString("utf8"));
 
   // if(i == 0)	wind_data.utc			= (int)tm_sec;
   // if(i == 1)	wind_data.windDirection	= atoi(token);		// short
