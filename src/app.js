@@ -4,6 +4,7 @@ import mqtt from "mqtt";
 import chalk from "chalk";
 import daq from "./daq";
 import plc from "./plc";
+import anemometer from "./anemometer";
 
 const client = mqtt.connect(process.env.MQTT_HOST);
 client.on("connect", () => {
@@ -29,6 +30,14 @@ client.subscribe(process.env.MQTT_PLC_TOPIC, err => {
     }, QoS : ${process.env.MQTT_QOS}`
   );
 });
+client.subscribe(process.env.MQTT_ANEMO_TOPIC, err => {
+  if (err) console.log(err);
+  console.log(
+    `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
+      process.env.MQTT_ANEMO_TOPIC
+    }, QoS : ${process.env.MQTT_QOS}`
+  );
+});
 
 client.on("close", () => {
   console.log(
@@ -41,5 +50,9 @@ daq.on("data", data => {
 });
 
 plc.on("data", data => {
-  client.publish(process.env.MQTT_PLC_TOPIC, cbor.encode(data))
-})
+  client.publish(process.env.MQTT_PLC_TOPIC, cbor.encode(data));
+});
+
+anemometer.on("data", data => {
+  client.publish(process.env.MQTT_ANEMO_TOPIC, cbor.encode(data));
+});

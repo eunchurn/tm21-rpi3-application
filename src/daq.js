@@ -1,9 +1,11 @@
 import dgram from "dgram";
+import "dotenv/config";
 import { daqParse } from "@libs/parser";
 import EventEmitter from 'events';
 
 class daqEvent extends EventEmitter {}
 const daq = new daqEvent();
+const PORT = Number(process.env.DAQ_UDP_PORT);
 
 const server = dgram.createSocket("udp4");
 
@@ -24,8 +26,8 @@ server.on("message", data => {
   daq.emit('data', parsedData);
 });
 
-server.bind(58432, () => {
-  server.addMembership("234.5.6.7");
+server.bind(PORT, () => {
+  server.addMembership(process.env.DAQ_UDP_MULTI_HOST);
 });
 
 export default daq;
