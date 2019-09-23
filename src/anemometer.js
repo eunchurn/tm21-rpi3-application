@@ -16,8 +16,14 @@ const client = net.createConnection(
 );
 
 client.on("data", data => {
-  console.log(data.toString().split(/\,/g))
-  
+  console.log(
+    data
+      .toString('utf8')
+      .replace(/\r/g, "")
+      .replace(/\n/g, "")
+      .split(/\,/g)
+  );
+
   // if(i == 0)	wind_data.utc			= (int)tm_sec;
   // if(i == 1)	wind_data.windDirection	= atoi(token);		// short
   // if(i == 2)	wind_data.windSpeed		= atof(token);		// float
