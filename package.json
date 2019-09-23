@@ -7,7 +7,12 @@
     "doc": "doc"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node ./index.js"
+    "start": "nodemon --exec babel-node ./index.js",
+    "forever:start": "forever --killTree start -a -l app.log -c node_modules/.bin/babel-node ./index.js",
+    "forever:stop": "forever stopall > /dev/null",
+    "forever:list": "forever list",
+    "log": "tail -f ~/.forever/app.log",
+    "restart": "yarn forever:stop && yarn forever:start"
   },
   "repository": {
     "type": "git",
@@ -29,6 +34,7 @@
   "dependencies": {
     "binary-parser": "^1.4.0",
     "cbor-sync": "^1.0.4",
+    "chalk": "^2.4.2",
     "dotenv": "^8.1.0",
     "mqtt": "^3.0.0",
     "redis": "^2.8.0"
@@ -38,7 +44,9 @@
     "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
     "babel-plugin-module-resolver": "^3.2.0",
-    "nodemon": "^1.19.2"
+    "forever-fixed": "^0.16.1",
+    "nodemon": "^1.19.2",
+    "shelljs": "^0.8.3"
   },
   "babel": {
     "presets": [
