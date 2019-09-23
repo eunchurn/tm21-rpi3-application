@@ -38,6 +38,7 @@
     "chalk": "^2.4.2",
     "dotenv": "^8.1.0",
     "mqtt": "^3.0.0",
+    "netcat": "^1.4.0",
     "redis": "^2.8.0"
   },
   "devDependencies": {
