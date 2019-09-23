@@ -16,8 +16,8 @@ const client = net.createConnection(
 );
 
 client.on("data", data => {
-  console.log(
-    `${data}`
+  console.log("received: ",
+    data.toString('utf8')
       .replace(/\r/g, "")
       .replace(/\n/g, "")
       .split(/\,/g)
