@@ -9,8 +9,8 @@ const nc = new netcatClient();
 nc.addr(process.env.ANEMOMETER_HOST)
   .port(Number(process.env.ANEMOMETER_PORT))
   .connect();
-  
-nc.listen().on("data", console.log);
+
+nc.on("data", console.log);
 
 // const client = net.createConnection(
 //   {
