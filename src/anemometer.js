@@ -21,7 +21,6 @@ client.on("data", data => {
       .toString('utf8')
       .replace(/\r/g, "")
       .replace(/\n/g, "")
-      .split(/\,/g)
   );
 
   // if(i == 0)	wind_data.utc			= (int)tm_sec;
