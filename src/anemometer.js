@@ -5,9 +5,8 @@ import EventEmitter from "events";
 
 class anemoEvent extends EventEmitter {}
 const anemometer = new anemoEvent();
-
-netcatClient
-  .addr(process.env.ANEMOMETER_HOST)
+const nc = new netcatClient();
+nc.addr(process.env.ANEMOMETER_HOST)
   .port(Number(process.env.ANEMOMETER_PORT))
   .listen()
   .on("data", console.log);
