@@ -14,6 +14,7 @@ const client = net.createConnection(
     console.log("connected to Anemometer server");
   }
 );
+client.setNoDelay(true);
 
 client.on("data", data => {
   console.log("received: ",
