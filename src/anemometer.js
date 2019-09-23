@@ -16,7 +16,7 @@ const client = net.createConnection(
 );
 
 client.on("data", data => {
-  console.log(data.toString())
+  console.log(data.toString().split(/\,/g))
   
   // if(i == 0)	wind_data.utc			= (int)tm_sec;
   // if(i == 1)	wind_data.windDirection	= atoi(token);		// short
