@@ -18,9 +18,9 @@ const client = net.createConnection(
 client.on("data", data => {
   console.log(
     data
-      .toString('utf16le')
-      .replace(/\r/g, "")
-      .replace(/\n/g, "")
+      .toString('utf8')
+      // .replace(/\r/g, "")
+      // .replace(/\n/g, "")
       .split(/\,/g)
   );
 
