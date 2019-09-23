@@ -1,6 +1,6 @@
 import net from "net";
 import "dotenv/config";
-import { plcParser } from "@libs/parser";
+import { plcParse } from "@libs/parser";
 import compare from "buffer-compare";
 import EventEmitter from "events";
 
@@ -24,7 +24,7 @@ let compData = new Buffer.from("");
 client.on("data", data => {
   compare(compData, data)
     ? (compData = data)
-    : plc.emit("data", plcParser.parse(data));
+    : plc.emit("data", plcParse(data));
 });
 client.on("end", () => {
   console.log("disconnected from server");

@@ -21,6 +21,15 @@ client.subscribe(process.env.MQTT_DAQ_TOPIC, err => {
     }, QoS : ${process.env.MQTT_QOS}`
   );
 });
+client.subscribe(process.env.MQTT_PLC_TOPIC, err => {
+  if (err) console.log(err);
+  console.log(
+    `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
+      process.env.MQTT_PLC_TOPIC
+    }, QoS : ${process.env.MQTT_QOS}`
+  );
+});
+
 client.on("close", () => {
   console.log(
     `${new Date().toISOString()}  | ${chalk.red("✗")} MQTT client disconnected`
