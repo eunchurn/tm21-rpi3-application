@@ -8,8 +8,9 @@ const anemometer = new anemoEvent();
 const nc = new netcatClient();
 nc.addr(process.env.ANEMOMETER_HOST)
   .port(Number(process.env.ANEMOMETER_PORT))
-  .listen()
-  .on("data", console.log);
+  .connect();
+  
+nc.listen().on("data", console.log);
 
 // const client = net.createConnection(
 //   {
