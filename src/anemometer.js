@@ -21,7 +21,6 @@ client.on("data", data => {
   if (data[data.length - 1] === 10) {
     anemoData.push(data);
     const joinedData = Buffer.concat(anemoData);
-    console.log(anemoParse(joinedData));
     const { utc, direction, speed, status } = anemoParse(joinedData);
     const output = {
       utc,

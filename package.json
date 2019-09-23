@@ -12,8 +12,7 @@
     "forever:stop": "forever stopall > /dev/null",
     "forever:list": "forever list",
     "log": "tail -f ~/.forever/app.log",
-    "restart": "yarn forever:stop && yarn forever:start",
-    "anemotest": "nodemon --exec babel-node ./anemotest.js"
+    "restart": "yarn forever:stop && yarn forever:start"
   },
   "repository": {
     "type": "git",
