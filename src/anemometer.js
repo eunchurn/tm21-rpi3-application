@@ -9,7 +9,6 @@ const anemometer = new anemoEvent();
 netcatClient
   .addr(process.env.ANEMOMETER_HOST)
   .port(Number(process.env.ANEMOMETER_PORT))
-  .connect()
   .listen()
   .on("data", console.log);
 
