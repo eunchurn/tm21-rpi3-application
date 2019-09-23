@@ -1,16 +1,15 @@
-import net from "net";
+import { spawn } from "child_process";
 import "dotenv/config";
-import netcatClient from "netcat/client";
 import EventEmitter from "events";
 
 class anemoEvent extends EventEmitter {}
 const anemometer = new anemoEvent();
-const nc = new netcatClient();
-nc.addr(process.env.ANEMOMETER_HOST)
-  .port(Number(process.env.ANEMOMETER_PORT))
-  .connect();
 
-nc.on("data", console.log);
+const netcat = spawn('netcat', [process.env.ANEMOMETER_HOST, process.env.ANEMOMETER_PORT]);
+
+netcat.stdout.on('data', (data) => {
+  console.log(data)
+})
 
 // const client = net.createConnection(
 //   {
