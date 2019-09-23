@@ -18,9 +18,10 @@ const client = net.createConnection(
 client.on("data", data => {
   console.log(
     data
-      .toString('utf8')
+      .toString('utf16le')
       .replace(/\r/g, "")
       .replace(/\n/g, "")
+      .split(/\,/g)
   );
 
   // if(i == 0)	wind_data.utc			= (int)tm_sec;
