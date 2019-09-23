@@ -19,12 +19,14 @@ const client = net.createConnection(
 let anemoData = [];
 client.on("data", data => {
   if (data[data.length-1] === 10) {
-    const joinedData = Buffer.concat(anemoData, 24);
+    const joinedData = Buffer.concat(anemoData);
+    console.log(joinedData)
     console.log(anemoParse(joinedData))
     anemoData = [];
   } else {
     anemoData.push(data);
   }
+  // console.log(data.toString())
   
   // console.log("received: ", data.length, data);
   // console.log(data.toString("utf8"));
