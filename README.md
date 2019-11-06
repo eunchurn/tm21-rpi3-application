@@ -1,6 +1,6 @@
 # Raspberry Pi Application for TM21 Vibration Controller Monitoring
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/eunchurn/tm21-rpi3-application.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/eunchurn/tm21-rpi3-application.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/eunchurn/tm21-rpi3-application.svg?branch=master)](https://travis-ci.org/eunchurn/tm21-rpi3-application)
 
 ## Work Flow and Road Map
 
