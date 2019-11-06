@@ -1,19 +1,19 @@
 import net from "net";
 import "dotenv/config";
 import EventEmitter from "events";
-import { anemoParse } from "../libs/parser";
+import { anemoParse } from "@libs/parser";
 
-class anemoEvent extends EventEmitter {}
-const anemometer = new anemoEvent();
+class AnemoEvent extends EventEmitter {}
+const anemometer = new AnemoEvent();
 
 const client = net.createConnection(
   {
     host: process.env.ANEMOMETER_HOST,
-    port: process.env.ANEMOMETER_PORT
+    port: process.env.ANEMOMETER_PORT,
   },
   () => {
     console.log("connected to Anemometer server");
-  }
+  },
 );
 
 let anemoData = [];
@@ -27,7 +27,7 @@ client.on("data", data => {
       timestamp: new Date().valueOf(),
       direction: Number(direction),
       speed: Number(speed),
-      status: Number(status)
+      status: Number(status),
     };
     anemometer.emit("data", output);
     anemoData = [];

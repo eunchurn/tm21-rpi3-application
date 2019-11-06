@@ -2,16 +2,16 @@ import "dotenv/config";
 import cbor from "cbor-sync";
 import mqtt from "mqtt";
 import chalk from "chalk";
-import daq from "./daq";
-import plc from "./plc";
-import anemometer from "./anemometer";
+import daq from "@src/daq";
+import plc from "@src/plc";
+import anemometer from "@src/anemometer";
 
 const client = mqtt.connect(process.env.MQTT_HOST);
 client.on("connect", () => {
   console.log(
-    `${new Date().toISOString()}  | ${chalk.green("✓")} MQTT client connected ${
-      process.env.MQTT_HOST
-    }`
+    `${new Date().toISOString()}  | ${chalk.green(
+      "✓",
+    )} MQTT client connected ${process.env.MQTT_HOST}`,
   );
 });
 client.subscribe(process.env.MQTT_DAQ_TOPIC, err => {
@@ -19,7 +19,7 @@ client.subscribe(process.env.MQTT_DAQ_TOPIC, err => {
   console.log(
     `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
       process.env.MQTT_DAQ_TOPIC
-    }, QoS : ${process.env.MQTT_QOS}`
+    }, QoS : ${process.env.MQTT_QOS}`,
   );
 });
 client.subscribe(process.env.MQTT_PLC_TOPIC, err => {
@@ -27,7 +27,7 @@ client.subscribe(process.env.MQTT_PLC_TOPIC, err => {
   console.log(
     `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
       process.env.MQTT_PLC_TOPIC
-    }, QoS : ${process.env.MQTT_QOS}`
+    }, QoS : ${process.env.MQTT_QOS}`,
   );
 });
 client.subscribe(process.env.MQTT_ANEMO_TOPIC, err => {
@@ -35,13 +35,15 @@ client.subscribe(process.env.MQTT_ANEMO_TOPIC, err => {
   console.log(
     `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
       process.env.MQTT_ANEMO_TOPIC
-    }, QoS : ${process.env.MQTT_QOS}`
+    }, QoS : ${process.env.MQTT_QOS}`,
   );
 });
 
 client.on("close", () => {
   console.log(
-    `${new Date().toISOString()}  | ${chalk.red("✗")} MQTT client disconnected`
+    `${new Date().toISOString()}  | ${chalk.red(
+      "✗",
+    )} MQTT client disconnected`,
   );
 });
 

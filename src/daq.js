@@ -1,10 +1,10 @@
 import dgram from "dgram";
 import "dotenv/config";
 import { daqParse } from "@libs/parser";
-import EventEmitter from 'events';
+import EventEmitter from "events";
 
-class daqEvent extends EventEmitter {}
-const daq = new daqEvent();
+class DaqEvent extends EventEmitter {}
+const daq = new DaqEvent();
 const PORT = Number(process.env.DAQ_UDP_PORT);
 
 const server = dgram.createSocket("udp4");
@@ -23,7 +23,7 @@ server.on("message", data => {
     delete obj.data;
     return obj;
   });
-  daq.emit('data', parsedData);
+  daq.emit("data", parsedData);
 });
 
 server.bind(PORT, () => {

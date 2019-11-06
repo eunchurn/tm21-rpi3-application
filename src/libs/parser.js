@@ -1,4 +1,4 @@
-const Parser = require("binary-parser").Parser;
+import { Parser } from "binary-parser";
 
 const dataParser = new Parser()
   .int16le("index")
@@ -36,16 +36,16 @@ const serverDataParser = new Parser()
 const plcParser = new Parser()
   .array("header", {
     type: "uint8",
-    length: 26
+    length: 26,
   })
   .uint32le("fullSignal")
   .array("data", {
     type: dataParser,
-    length: 20
+    length: 20,
   })
   .array("remain", {
     type: "uint16le",
-    length: 4
+    length: 4,
   });
 
 const serverParser = new Parser()
@@ -54,11 +54,11 @@ const serverParser = new Parser()
     length: 26,
     formatter: arr => {
       return arr.map(x => x.toString(16)).join("");
-    }
+    },
   })
   .array("data", {
     type: serverDataParser,
-    length: 10
+    length: 10,
   });
 
 const daqParser = new Parser()
@@ -70,45 +70,45 @@ const daqParser = new Parser()
   .array("channel", {
     type: new Parser().array("data", {
       type: "doublebe",
-      length: 100
+      length: 100,
     }),
-    length: "noCh"
+    length: "noCh",
   });
 
 const anemoParser = new Parser()
   .uint16("utc")
   .string("comma1", {
-    length: 1
+    length: 1,
   })
   .string("direction", {
-    length: 3
+    length: 3,
   })
   .string("comma2", {
-    length: 1
+    length: 1,
   })
   .string("speed", {
-    length: 6
+    length: 6,
   })
   .string("comma3", {
-    length: 1
+    length: 1,
   })
   .string("M", {
-    length: 1
+    length: 1,
   })
   .string("comma4", {
-    length: 1
+    length: 1,
   })
   .string("status", {
-    length: 2
+    length: 2,
   })
   .string("comma5", {
-    length: 1
+    length: 1,
   })
   .string("unknwon", {
-    length: 4
+    length: 4,
   })
   .string("etx", {
-    length: 1
+    length: 1,
   });
 
 export const daqParse = data => daqParser.parse(data);
