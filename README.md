@@ -17,20 +17,22 @@
 
 Run `npm i` or `yarn`
 
+### Install `systemd`
+
+Run `./scripts/install.sh`
+
 ## Getting started
 
 Run `npm start` or `yarn start`
 
-### Forever start
-
-Run `npm run forever:start` or `yarn forever:start`
-
 ### System service
 
-- `# /etc/init.d/dku start`: 재부팅 후에도 이 서비스는 자동으로 실행 됨
-- `# /etc/init.d/dku log`: 로그 내용보기
-- `# /etc/init.d/dku restart`: 서비스 재시작
-- `# /etc/init.d/dku stop`: 서비스 중지
+- ✅**start**: `systemctl start dku`
+- ❎**stop**: `systemctl stop dku`
+- 🔧**restart**: `systemctl restart dku`
+- 💡**status**: `systemctl status dku`
+- 🔍**log view**: `journalctl -u dku`
+- 🗓**log following**: `journalctl -u dku -f`
 
 ## 자동화 스크립트
 
