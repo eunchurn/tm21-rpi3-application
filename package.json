@@ -7,17 +7,18 @@
     "doc": "doc"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node ./index.js",
+    "prestart": "yarn build",
+    "start": "node ./dist/index.js",
     "lint": "eslint .",
     "test": "jest",
-    "coverage": "npm test -- --coverage",
+    "coverage": "yarn test -- --coverage",
     "postcoverage": "open-cli coverage/lcov-report/index.html",
     "clean": "rimraf dist",
     "flow": "flow check",
     "flowbuild": "flow-copy-source src dist",
-    "prebuild": "npm run clean && npm run flowbuild",
+    "prebuild": "yarn clean && yarn flowbuild",
     "build": "babel src -d dist",
-    "prerelease": "npm run lint && npm test && npm run build",
+    "prerelease": "yarn lint && npm test && yarn build",
     "release": "standard-version",
     "postpublish": "git push origin master --follow-tags",
     "tree": "tree -a -I 'node_modules|.git'",
@@ -59,6 +60,9 @@
       "git add"
     ]
   },
+  "jest": {
+    "collectCoverage": true
+  },
   "dependencies": {
     "binary-parser": "^1.4.0",
     "buffer-compare": "^1.1.1",
@@ -99,6 +103,7 @@
     "prettier": "^1.18.2",
     "rimraf": "^3.0.0",
     "shelljs": "^0.8.3",
-    "standard-version": "^7.0.0"
+    "standard-version": "^7.0.0",
+    "yarn": "^1.19.1"
   }
 }
