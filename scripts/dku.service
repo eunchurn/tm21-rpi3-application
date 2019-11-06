@@ -1,0 +1,13 @@
+[Unit]
+Description=DKU Vibration controller Data Gateway Application
+Documentation=https://github.com/eunchurn/tm21-rpi3-application#readme
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/app
+ExecStart=/root/.nvm/versions/node/v12.13.0/bin/node /root/app/dist/index.js
+
+
+[Install]
+WantedBy=multi-user.target
