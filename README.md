@@ -17,20 +17,12 @@
 
 ## Installation
 
-Run `npm i` or `yarn`
-
 ### Install `systemd`
 
 ```bash
 curl --insecure -o- -L \
 https://raw.githubusercontent.com/eunchurn/tm21-rpi3-application/master/scripts/install.sh | bash
 ```
-
-Run `./scripts/install.sh`
-
-## Getting started
-
-Run `npm start` or `yarn start`
 
 ### System service
 
@@ -40,9 +32,3 @@ Run `npm start` or `yarn start`
 - 💡**status**: `systemctl status dku`
 - 🔍**log view**: `journalctl -u dku`
 - 🗓**log following**: `journalctl -u dku -f`
-
-## 자동화 스크립트
-
-- [x] 자동화 설치 스크립트: [`install.sh`](scripts/install.sh)
-- [x] 시스템 서비스: [`dku.sh`](scripts/dku.sh)
-- [ ] OTA 시스템 서비스: [`ota.sh`](scripts/ota.sh)
