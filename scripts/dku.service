@@ -8,6 +8,8 @@ Type=simple
 WorkingDirectory=/root/app
 ExecStart=/root/.nvm/versions/node/v12.13.0/bin/node /root/app/dist/index.js
 
+RestartSec=10
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

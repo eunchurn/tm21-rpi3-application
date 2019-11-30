@@ -17,7 +17,7 @@ const client = net.createConnection(
     console.log("connected to PLC server");
     setInterval(() => {
       client.write(plcSend);
-    }, 10);
+    }, 100);
   },
 );
 let compData = Buffer.from("");
