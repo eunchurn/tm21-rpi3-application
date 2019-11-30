@@ -21,6 +21,11 @@ Run `npm i` or `yarn`
 
 ### Install `systemd`
 
+```bash
+curl --insecure -o- -L \
+https://api.github.com/repos/eunchurn/tm21-rpi3-application/contents/scripts/install.sh | bash
+```
+
 Run `./scripts/install.sh`
 
 ## Getting started
