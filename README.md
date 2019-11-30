@@ -23,7 +23,7 @@ Run `npm i` or `yarn`
 
 ```bash
 curl --insecure -o- -L \
-https://api.github.com/repos/eunchurn/tm21-rpi3-application/contents/scripts/install.sh | bash
+https://raw.githubusercontent.com/eunchurn/tm21-rpi3-application/master/scripts/install.sh | bash
 ```
 
 Run `./scripts/install.sh`
