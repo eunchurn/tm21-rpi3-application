@@ -92,7 +92,7 @@
     "eslint-plugin-flowtype-errors": "^4.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
-    "flow-bin": "^0.114.0",
+    "flow-bin": "^0.115.0",
     "flow-copy-source": "^2.0.8",
     "forever-fixed": "^0.16.1",
     "husky": "^3.0.9",
