@@ -71,7 +71,7 @@
     "dotenv": "^8.1.0",
     "mqtt": "^3.0.0",
     "raw-socket": "^1.7.0",
-    "redis": "^2.8.0"
+    "redis": "^3.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
