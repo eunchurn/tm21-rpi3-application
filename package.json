@@ -1,6 +1,6 @@
 {
   "name": "tm21-rpi3-application",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Raspberry Pi Application for TM21 Vibration Controller Monitoring",
   "main": "index.js",
   "directories": {
