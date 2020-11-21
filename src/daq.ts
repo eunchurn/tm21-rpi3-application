@@ -8,7 +8,7 @@ type DaqParse = Pick<
   "header" | "noCh" | "noSample" | "samplingRate" | "station"
 >;
 interface Data extends DaqParse {
-  channel: number[][];
+  channel: { [x: number]: number[] }[];
 }
 
 class DaqEvent extends EventEmitter {}
@@ -28,7 +28,9 @@ server.on(
     const timestamp = new Date();
     const daqData = daqParse(data);
     const { channel: daqChannelData } = daqData;
-    const channel = daqChannelData.map((obj) => obj.data);
+    const channel = daqChannelData.map((obj, index) => ({
+      [index]: obj.data,
+    }));
     const parsedData = {
       ...daqParse(data),
       timestamp: timestamp.valueOf(),
