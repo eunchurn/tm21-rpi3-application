@@ -111,14 +111,10 @@ const anemoParser = new Parser()
     length: 1,
   });
 
-export const daqParse = (data: Buffer) => {
-  console.log("daqParse:", data.toString("hex"));
-  console.log("daqParsed:", JSON.stringify(daqParser.parse(data)));
-  return daqParser.parse(data);
+export const daqParse = (data: Buffer) => daqParser.parse(data);
+export const plcParse = (data: Buffer) => plcParser.parse(data);
+export const anemoParse = (data: Buffer) => {
+  console.log("anemoData:", data.toString("hex"));
+  return anemoParser.parse(data);
 };
-export const plcParse = (data: Buffer) => {
-  console.log("plcParse", data.toString("hex"));
-  return plcParser.parse(data);
-};
-export const anemoParse = (data: Buffer) => anemoParser.parse(data);
 export const dataParse = (data: Buffer) => dataParser.parse(data);

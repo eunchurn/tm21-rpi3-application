@@ -26,7 +26,6 @@ server.on(
   "message",
   (data: Buffer): Data => {
     const timestamp = new Date();
-    console.log(data.toString("hex"));
     const daqData = daqParse(data);
     const { channel: daqChannelData } = daqData;
     const channel = daqChannelData.map((obj) => obj.data);
