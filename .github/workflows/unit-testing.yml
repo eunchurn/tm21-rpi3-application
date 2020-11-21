@@ -30,13 +30,13 @@ jobs:
             ${{ runner.OS }}-
       - name: Install 🔧
         run: |
-          npm install
+          yarn
       - name: TypeCheck 📝
         run: |
-          npm run typecheck
+          yarn typecheck
       - name: Unit Testing 🚥
         run: |
-          npm run test
+          yarn test
       - name: Report Codecov 🔍
         uses: codecov/codecov-action@v1
         with:
