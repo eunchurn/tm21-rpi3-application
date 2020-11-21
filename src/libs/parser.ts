@@ -113,8 +113,5 @@ const anemoParser = new Parser()
 
 export const daqParse = (data: Buffer) => daqParser.parse(data);
 export const plcParse = (data: Buffer) => plcParser.parse(data);
-export const anemoParse = (data: Buffer) => {
-  console.log("anemoData:", data.toString("hex"));
-  return anemoParser.parse(data);
-};
-export const dataParse = (data: Buffer) => dataParser.parse(data);
+export const anemoParse = (data: Buffer) => anemoParser.parse(data);
+// export const dataParse = (data: Buffer) => dataParser.parse(data);
