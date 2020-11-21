@@ -1,6 +1,6 @@
 # Raspberry Pi Application for TM21 Vibration Controller Monitoring
 
-[![Build Status](https://travis-ci.org/eunchurn/tm21-rpi3-application.svg?branch=master)](https://travis-ci.org/eunchurn/tm21-rpi3-application) ![Unit Test](https://github.com/eunchurn/tm21-rpi3-application/workflows/Unit%20Test/badge.svg?branch=master) [![codecov](https://codecov.io/gh/eunchurn/tm21-rpi3-application/branch/master/graph/badge.svg?token=xatvEuw8vg)](https://codecov.io/gh/eunchurn/tm21-rpi3-application)
+![Unit Test](https://github.com/eunchurn/tm21-rpi3-application/workflows/Unit%20Test/badge.svg?branch=master) [![codecov](https://codecov.io/gh/eunchurn/tm21-rpi3-application/branch/master/graph/badge.svg?token=xatvEuw8vg)](https://codecov.io/gh/eunchurn/tm21-rpi3-application)
 
 ## Work Flow and Road Map
 
