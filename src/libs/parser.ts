@@ -112,7 +112,8 @@ const anemoParser = new Parser()
   });
 
 export const daqParse = (data: Buffer) => {
-  console.log("daqParse:", data);
+  console.log("daqParse:", data.toString("hex"));
+  console.log("daqParsed:", JSON.stringify(daqParser.parse(data)));
   return daqParser.parse(data);
 };
 export const plcParse = (data: Buffer) => {
