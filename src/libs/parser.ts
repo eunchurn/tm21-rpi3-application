@@ -111,7 +111,10 @@ const anemoParser = new Parser()
     length: 1,
   });
 
-export const daqParse = (data: Buffer) => daqParser.parse(data);
+export const daqParse = (data: Buffer) => {
+  console.log("daqParse:", data);
+  return daqParser.parse(data);
+};
 export const plcParse = (data: Buffer) => plcParser.parse(data);
 export const anemoParse = (data: Buffer) => anemoParser.parse(data);
 export const dataParse = (data: Buffer) => dataParser.parse(data);
