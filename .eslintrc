@@ -1,12 +1,14 @@
 {
-  "parser": "babel-eslint",
+  "root": true,
+  "parser": "@typescript-eslint/parser",
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "airbnb-base",
-    "prettier/flowtype",
-    "plugin:flowtype/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["flowtype", "flowtype-errors"],
+  "plugins": ["@typescript-eslint"],
   "env": {
     "node": true,
     "jest": true,
@@ -22,7 +24,7 @@
           ["@libs", "./src/libs/"]
           // ["@build", "./build/Release/"]
         ],
-        "extensions": [".js", ".json"]
+        "extensions": [".ts", ".js", ".json"]
       }
     }
   },
@@ -38,10 +40,21 @@
     }
   },
   "rules": {
-    "flowtype-errors/show-errors": "error",
     "prettier/prettier": ["error"],
     "no-console": ["off"],
     "no-unused-vars": ["off"],
-    "no-param-reassign": ["off"]
+    "no-param-reassign": ["off"],
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "ts": "never",
+        "js": "never",
+        "json": "always"
+      }
+    ],
+    "no-array-constructor": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }

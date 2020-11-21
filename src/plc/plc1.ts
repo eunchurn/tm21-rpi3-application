@@ -2,16 +2,19 @@ import net from "net";
 import "dotenv/config";
 import { plcParse } from "@libs/parser";
 import compare from "buffer-compare";
-import EventEmitter from "events";
+import { EventEmitter } from "events";
 
 class PlcEvent extends EventEmitter {}
 const plc = new PlcEvent();
 
-const plcSend = Buffer.from(process.env.PLC_SEND_PACKET2, "hex"); // 100Hz
+const plcSend = Buffer.from(
+  process.env.PLC_SEND_PACKET1 || "",
+  "hex",
+); // 100Hz
 const client = net.createConnection(
   {
-    host: process.env.PLC_HOST,
-    port: process.env.PLC_PORT,
+    host: process.env.PLC_HOST || "",
+    port: +(process.env.PLC_PORT || 8000),
   },
   () => {
     console.log("connected to PLC server");
@@ -21,7 +24,7 @@ const client = net.createConnection(
   },
 );
 let compData = Buffer.from("");
-client.on("data", data => {
+client.on("data", (data) => {
   if (compare(compData, data)) {
     compData = data;
   } else {

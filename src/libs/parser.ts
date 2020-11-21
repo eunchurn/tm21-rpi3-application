@@ -1,6 +1,6 @@
 import { Parser } from "binary-parser";
 
-const dataParser = new Parser()
+export const dataParser = new Parser()
   .int16le("index")
   .int16le("index2")
   .int16le("Y1")
@@ -14,24 +14,24 @@ const dataParser = new Parser()
   .int16le("Y2filter")
   .int16le("inverseF");
 
-const serverDataParser = new Parser()
-  .uint16("index")
-  .uint16("index2")
-  .uint16("Y1_AI1")
-  .uint16("Y2_AI2")
-  .uint16("X1_AI6")
-  .uint16("Y1AMD_AI4")
-  .uint16("dispH")
-  .uint16("dispL")
-  .uint16("motorVoltage")
-  .uint16("Y2Filter")
-  .uint16("feedback_AI5")
-  .uint16("inverse")
-  .uint16("Digit1")
-  .uint16("Digit2")
-  .uint16("Digit3")
-  .uint16("Digit4")
-  .uint16("Digit5");
+// const serverDataParser = new Parser()
+//   .uint16("index")
+//   .uint16("index2")
+//   .uint16("Y1_AI1")
+//   .uint16("Y2_AI2")
+//   .uint16("X1_AI6")
+//   .uint16("Y1AMD_AI4")
+//   .uint16("dispH")
+//   .uint16("dispL")
+//   .uint16("motorVoltage")
+//   .uint16("Y2Filter")
+//   .uint16("feedback_AI5")
+//   .uint16("inverse")
+//   .uint16("Digit1")
+//   .uint16("Digit2")
+//   .uint16("Digit3")
+//   .uint16("Digit4")
+//   .uint16("Digit5");
 
 const plcParser = new Parser()
   .array("header", {
@@ -48,18 +48,18 @@ const plcParser = new Parser()
     length: 4,
   });
 
-const serverParser = new Parser()
-  .array("header", {
-    type: "uint8",
-    length: 26,
-    formatter: arr => {
-      return arr.map(x => x.toString(16)).join("");
-    },
-  })
-  .array("data", {
-    type: serverDataParser,
-    length: 10,
-  });
+// const serverParser = new Parser()
+//   .array("header", {
+//     type: "uint8",
+//     length: 26,
+//     formatter: (arr) => {
+//       return arr.map((x) => x.toString(16)).join("");
+//     },
+//   })
+//   .array("data", {
+//     type: serverDataParser,
+//     length: 10,
+//   });
 
 const daqParser = new Parser()
   .uint32be("header")
@@ -111,6 +111,7 @@ const anemoParser = new Parser()
     length: 1,
   });
 
-export const daqParse = data => daqParser.parse(data);
-export const plcParse = data => plcParser.parse(data);
-export const anemoParse = data => anemoParser.parse(data);
+export const daqParse = (data: Buffer) => daqParser.parse(data);
+export const plcParse = (data: Buffer) => plcParser.parse(data);
+export const anemoParse = (data: Buffer) => anemoParser.parse(data);
+export const dataParse = (data: Buffer) => dataParser.parse(data);

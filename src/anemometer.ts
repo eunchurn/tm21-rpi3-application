@@ -1,6 +1,6 @@
 import net from "net";
 import "dotenv/config";
-import EventEmitter from "events";
+import { EventEmitter } from "events";
 import { anemoParse } from "@libs/parser";
 
 class AnemoEvent extends EventEmitter {}
@@ -8,16 +8,16 @@ const anemometer = new AnemoEvent();
 
 const client = net.createConnection(
   {
-    host: process.env.ANEMOMETER_HOST,
-    port: process.env.ANEMOMETER_PORT,
+    host: process.env.ANEMOMETER_HOST || "",
+    port: +(process.env.ANEMOMETER_PORT || 8000),
   },
   () => {
     console.log("connected to Anemometer server");
   },
 );
 
-let anemoData = [];
-client.on("data", data => {
+let anemoData = new Array<Buffer>();
+client.on("data", (data) => {
   if (data[data.length - 1] === 10) {
     anemoData.push(data);
     const joinedData = Buffer.concat(anemoData);

@@ -14,7 +14,7 @@ client.on("connect", () => {
     )} MQTT client connected ${process.env.MQTT_HOST}`,
   );
 });
-client.subscribe(process.env.MQTT_DAQ_TOPIC, err => {
+client.subscribe(process.env.MQTT_DAQ_TOPIC || "", (err) => {
   if (err) console.log(err);
   console.log(
     `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
@@ -22,7 +22,7 @@ client.subscribe(process.env.MQTT_DAQ_TOPIC, err => {
     }, QoS : ${process.env.MQTT_QOS}`,
   );
 });
-client.subscribe(process.env.MQTT_PLC_TOPIC, err => {
+client.subscribe(process.env.MQTT_PLC_TOPIC || "", (err) => {
   if (err) console.log(err);
   console.log(
     `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
@@ -30,7 +30,7 @@ client.subscribe(process.env.MQTT_PLC_TOPIC, err => {
     }, QoS : ${process.env.MQTT_QOS}`,
   );
 });
-client.subscribe(process.env.MQTT_ANEMO_TOPIC, err => {
+client.subscribe(process.env.MQTT_ANEMO_TOPIC || "", (err) => {
   if (err) console.log(err);
   console.log(
     `${new Date().toISOString()}  | ${chalk.green("✓")} subscribe : ${
@@ -47,14 +47,19 @@ client.on("close", () => {
   );
 });
 
-daq.on("data", data => {
-  client.publish(process.env.MQTT_DAQ_TOPIC, cbor.encode(data));
+daq.on("data", (data) => {
+  client.publish(process.env.MQTT_DAQ_TOPIC || "", cbor.encode(data));
 });
 
-plc.on("data", data => {
-  client.publish(process.env.MQTT_PLC_TOPIC, cbor.encode(data));
+plc.on("data", (data) => {
+  client.publish(process.env.MQTT_PLC_TOPIC || "", cbor.encode(data));
 });
 
-anemometer.on("data", data => {
-  client.publish(process.env.MQTT_ANEMO_TOPIC, cbor.encode(data));
+anemometer.on("data", (data) => {
+  client.publish(
+    process.env.MQTT_ANEMO_TOPIC || "",
+    cbor.encode(data),
+  );
 });
+
+export default client;
