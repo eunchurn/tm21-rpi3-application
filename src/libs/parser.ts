@@ -116,7 +116,7 @@ export const daqParse = (data: Buffer) => {
   return daqParser.parse(data);
 };
 export const plcParse = (data: Buffer) => {
-  console.log("plcParse", data);
+  console.log("plcParse", data.toString("hex"));
   return plcParser.parse(data);
 };
 export const anemoParse = (data: Buffer) => anemoParser.parse(data);
