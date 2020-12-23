@@ -23,7 +23,6 @@
     "release": "standard-version",
     "postpublish": "git push origin master --follow-tags",
     "tree": "tree -a -I 'node_modules|.git'",
-    "log": "tail -f ~/.forever/app.log",
     "stacktest": "ts-node-dev --respawn ./src/libs/stackTesting.ts"
   },
   "repository": {
