@@ -23,20 +23,20 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
       - name: Install 🔧
         run: |
-          yarn
+          npm install
       - name: TypeCheck 📝
         run: |
-          yarn typecheck
+          npm run typecheck
       - name: Unit Testing 🚥
         run: |
-          yarn test
+          npm test
       - name: Report Codecov 🔍
         uses: codecov/codecov-action@v1
         with:
