@@ -48,8 +48,14 @@
   "homepage": "https://github.com/eunchurn/tm21-rpi3-application#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
     "*.ts": [
@@ -74,6 +80,8 @@
     "redis": "^3.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/binary-parser": "1.5.0",
     "@types/buffer-compare": "0.0.30",
     "@types/jest": "26.0.20",
