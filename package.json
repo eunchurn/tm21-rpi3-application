@@ -84,7 +84,7 @@
     "@commitlint/config-conventional": "12.1.1",
     "@types/binary-parser": "1.5.0",
     "@types/buffer-compare": "0.0.30",
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "@types/redis": "2.8.28",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
