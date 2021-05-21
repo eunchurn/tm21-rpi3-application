@@ -74,7 +74,7 @@
     "buffer-compare": "^1.1.1",
     "cbor-sync": "^1.0.4",
     "chalk": "^4.1.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "module-alias": "^2.2.2",
     "mqtt": "^4.2.6",
     "redis": "^3.1.1"
