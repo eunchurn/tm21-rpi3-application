@@ -88,7 +88,7 @@
     "@types/redis": "2.8.32",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
-    "documentation": "13.2.4",
+    "documentation": "13.2.5",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-prettier": "8.4.0",
