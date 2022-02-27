@@ -114,7 +114,7 @@ export const stackPLC = (key: string): Promise<StackData> => {
         resolve(stackedData);
       });
     } catch (error) {
-      reject(new Error(error));
+      reject(new Error(JSON.stringify(error)));
     }
   });
 };
