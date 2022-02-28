@@ -116,7 +116,7 @@
     "**/shelljs": "^0.8.5",
     "**/nanoid": "^3.1.31",
     "**/tmpl": "^1.0.5",
-    "**/remark-html": "^13.0.2",
+    "**/remark-html": "^15.0.0",
     "**/path-parse": "^1.0.7",
     "**/glob-parent": "^5.1.2",
     "**/trim-newlines": "^3.0.1",
