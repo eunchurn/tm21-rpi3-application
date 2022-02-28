@@ -119,7 +119,7 @@
     "**/remark-html": "^13.0.2",
     "**/path-parse": "^1.0.7",
     "**/glob-parent": "^5.1.2",
-    "**/trim-newlines": "^3.0.1",
+    "**/trim-newlines": "^4.0.0",
     "**/ws": "^7.4.6"
   }
 }
