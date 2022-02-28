@@ -94,7 +94,7 @@
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-prettier": "4.0.0",
-    "husky": "5.2.0",
+    "husky": "7.0.4",
     "jest": "27.5.1",
     "lint-staged": "12.3.4",
     "prettier": "2.5.1",
