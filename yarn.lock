@@ -1419,12 +1419,10 @@ binary-extensions@^2.0.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-binary-parser@^1.7.0:
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/binary-parser/-/binary-parser-1.9.2.tgz#6474e30eb2ddee85ab042135e2d011fa80d11438"
-  integrity sha512-aQvTapiRIV/x7bAaR2KT3Ptyjff4R8i1zxljgw/Je2kUt0babNPUdtuo7AKN4CWklyzPK4u5e99Z9/3Ib03u9w==
-  dependencies:
-    fast-text-encoding "^1.0.3"
+binary-parser@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/binary-parser/-/binary-parser-2.0.2.tgz#e494f9a0ebb2a4ec7d2b09df47cdeffa23df1563"
+  integrity sha512-F2JeaLmExQ0vOEbS5ERzkxePKWTPqJPV6Z04/owaXMQLlW1Kt9v2gUz3SocR40JQGtrUeZu3j6prZDeuEG8Dng==
 
 bl@^4.0.2:
   version "4.1.0"
@@ -2842,11 +2840,6 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
-
-fast-text-encoding@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/fast-text-encoding/-/fast-text-encoding-1.0.3.tgz#ec02ac8e01ab8a319af182dae2681213cfe9ce53"
-  integrity sha512-dtm4QZH9nZtcDt8qJiOH9fcQd1NAgi+K1O2DbE6GG1PPCK/BWfOH3idCTRQ4ImXRUOyopDEgDEnVEE7Y/2Wrig==
 
 fastq@^1.6.0:
   version "1.13.0"
