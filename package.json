@@ -110,7 +110,7 @@
     "**/trim-off-newlines": "^1.0.3",
     "**/ansi-regex": "^5.0.1",
     "**/ansi-html": "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41",
-    "**/hosted-git-info": "^2.8.9",
+    "**/hosted-git-info": "^4.0.0",
     "**/lodash": "^4.17.21",
     "**/cached-path-relative": "^1.1.0",
     "**/shelljs": "^0.8.5",
