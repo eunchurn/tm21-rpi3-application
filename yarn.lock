@@ -823,10 +823,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/binary-parser@1.5.1":
-  version "1.5.1"
-  resolved "https://registry.npmjs.org/@types/binary-parser/-/binary-parser-1.5.1.tgz#248c0d787498f3622c177622e93dfe2478235635"
-  integrity sha512-wxSg5YQFVYsyGwuCSTdBu+cUIYCD9eX0pq3CsJbP4DLeLExbwEPqci9JgjCNHv1ZfLO/QzVtGlasec5xSUcCVA==
+"@types/binary-parser@1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@types/binary-parser/-/binary-parser-1.5.4.tgz#29b94df99493e0ba9ccbf6dcc39b961750de93d3"
+  integrity sha512-vimOb9BdPUlkzyq+PxOogoM6Evqda2+PcayBSswgz1Ro8/jbwQWLxXmcnMj2ZsjAL8Z4IKEcGqXHCowynu6/Tg==
   dependencies:
     "@types/node" "*"
 
