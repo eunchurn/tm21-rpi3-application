@@ -108,7 +108,7 @@
   "resolutions": {
     "**/postcss": "^8.2.13",
     "**/trim-off-newlines": "^1.0.3",
-    "**/ansi-regex": "^5.0.1",
+    "**/ansi-regex": "^6.0.0",
     "**/ansi-html": "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41",
     "**/hosted-git-info": "^2.8.9",
     "**/lodash": "^4.17.21",
