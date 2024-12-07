@@ -76,7 +76,7 @@
     "dotenv": "^16.0.0",
     "module-alias": "^2.2.2",
     "mqtt": "^4.2.6",
-    "redis": "^3.1.1"
+    "redis": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.1",
@@ -84,7 +84,7 @@
     "@types/binary-parser": "1.5.1",
     "@types/buffer-compare": "0.0.30",
     "@types/jest": "27.4.1",
-    "@types/redis": "2.8.32",
+    "@types/redis": "4.0.10",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
     "documentation": "13.2.5",
